@@ -1,0 +1,14 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand text-white">Shalex - Это тестовое приложение на Angular8 и .Net Core 3.1</a>
+  <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Выйти</button>
+</nav>
+
+<h1>Добро пожаловать {{userDetails.name}}!</h1>
+<div class="card m-5" style="width:21rem" *ngIf="userDetails">
+  <ul class="list-group">
+    <li class="list-group-item"><strong>Id : </strong>{{userDetails.id}}</li>
+    <li class="list-group-item"><strong>Login : </strong>{{userDetails.title}}</li>
+    <li class="list-group-item"><strong>Имя пользователя : </strong>{{userDetails.name}}</li>
+    <li class="list-group-item"><strong>Email : </strong>{{userDetails.email}}</li>
+  </ul>
+</div>
