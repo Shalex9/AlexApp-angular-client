@@ -1,2 +1,30 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<router-outlet></router-outlet>
+<!-- <nav class="navbar navbar-dark bg-dark">
+  <a *ngIf="!service.isLogin" class="navbar-brand text-white">Тестовое приложение, разработанное на Angular8, и .Net
+    Core
+    3.1</a>
+  <a *ngIf="service.isLogin" class="navbar-brand text-white">Добро пожаловать
+    {{service.userDetails ? service.userDetails.name : ''}}!</a>
+  <ul>
+    <li><button class="btn btn-danger my-2 my-sm-0" routerLink='/about' routerLinkActive='active'>О проэкте</button>
+    </li>
+    <li><button class="btn btn-danger my-2 my-sm-0" routerLink='/films' routerLinkActive='active'>Фильмы</button></li>
+    <li *ngIf="service.isLogin"><button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Выйти</button></li>
+    <li *ngIf="!service.isLogin"><button class="btn btn-danger my-2 my-sm-0" routerLink='/user/login'>Вoйти</button>
+    </li>
+  </ul>
+</nav>
+<router-outlet></router-outlet> -->
+<div class="wrapper">
+  <div class="sidebar" data-color='red' data-image="">
+    <app-sidebar></app-sidebar>
+    <div class="sidebar-background" style="background-image: url(../assets/img/bg-sidebar.jpg)"></div>
+  </div>
+  <div class="main-panel">
+    <app-navbar></app-navbar>
+    <app-dashboard></app-dashboard>
+    <!-- <div *ngIf="isMaps('/maps')">
+            <footer-cmp></footer-cmp>
+        </div> -->
+  </div>
+  <a class="arrow-up" id="topBtn" (click)="scrollTop()"><i class="material-icons">vertical_align_top</i></a>
+</div>

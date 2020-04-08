@@ -1,15 +1,15 @@
-<div class="wrapper">
+<!-- <div class="wrapper">
   <div class="form-row" style="margin-top: 130px; text-align: center;">
-    <div class="form-group col-md-8 offset-md-2">
+    <div class="form-group col-md-8 col-md-offset-2">
       <h3>Тестовое приложение, разработанное на Angular8, и .Net Core 3.1</h3>
       <h3>БД - MSSQL Server</h3>
       <h4>Приложение пустое внутри, суть приложения - аутентификация и авторизация через Angular и .Net Core, а также
         разворачивание Angular-приложения на сервере</h4>
     </div>
   </div>
-  <div class="wrapped-div">
+  <div *ngIf="!service.isLogin" class="wrapped-div">
     <div class="form-row">
-      <div class="form-group col-md-8 offset-md-2">
+      <div class="form-group col-md-8">
         <button routerLink='/user/login' class="btn btn-sm btn-block"><span
             style="color:lightsteelblue; font-size: 20px;">Перейти к
             авторизации</span></button>
@@ -22,4 +22,30 @@
           Александр</a></h2>
     </div>
   </div>
-</div>
+</div> -->
+
+
+<div class="start-wrapper">
+  <div class="start-wrapper-div">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <h3>Тестовое приложение, разработанное на Angular8, и .Net Core 3.1</h3>
+        <h3>БД - MSSQL Server</h3>
+        <h4>Приложение пустое внутри, суть приложения - аутентификация и авторизация через Angular и .Net Core, а также
+          разворачивание Angular-приложения на сервере</h4>
+        <div *ngIf="!service.isLogin" class="wrapped-div">
+          <div class="form-row">
+            <div class="form-group col-md-8">
+              <button routerLink='/user/login' class="btn btn-sm btn-block"><span
+                  style="color:lightsteelblue; font-size: 20px;">Перейти к
+                  авторизации</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-md-12 ">
+        <h2>Разработчик - <a href="https://www.linkedin.com/in/alexander-shevchuk-71583712a" target="_blank">Шевчук
+            Александр</a></h2>
+      </div>
+    </div>
+  </div>

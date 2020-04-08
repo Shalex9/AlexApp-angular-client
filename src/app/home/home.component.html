@@ -1,9 +1,12 @@
-<nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand text-white">Shalex - Это тестовое приложение на Angular8 и .Net Core 3.1</a>
+<nav *ngIf="userDetails" class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand text-white">Добро пожаловать {{userDetails.name}}!</a>
+  <button class="btn btn-danger my-2 my-sm-0" routerLink='/films' routerLinkActive='active'>Фильмы</button>
+  <button class="btn btn-danger my-2 my-sm-0" routerLink='/about' routerLinkActive='active'>About</button>
   <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Выйти</button>
 </nav>
-
-<h1>Добро пожаловать {{userDetails.name}}!</h1>
+<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
+<!-- 
 <div class="card m-5" style="width:21rem" *ngIf="userDetails">
   <ul class="list-group">
     <li class="list-group-item"><strong>Id : </strong>{{userDetails.id}}</li>
@@ -11,4 +14,11 @@
     <li class="list-group-item"><strong>Имя пользователя : </strong>{{userDetails.name}}</li>
     <li class="list-group-item"><strong>Email : </strong>{{userDetails.email}}</li>
   </ul>
-</div>
+</div> -->
+
+<!-- <footer>
+  <p class="copyright pull-right">
+    <span><i class="material-icons">system_update</i>Source:<a href="https://www.themoviedb.org">The Movie DB</a></span>
+    &copy; {{test | date: 'yyyy'}} <a href="http://www.shalex.info">Shalex</a>, made with love for a better web
+  </p>
+</footer> -->

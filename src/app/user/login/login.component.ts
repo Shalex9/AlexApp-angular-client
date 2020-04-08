@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styles: []
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
   formModel = {
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     if (localStorage.getItem('token') != null)
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('');
   }
 
   onSubmit(form: NgForm) {
@@ -29,8 +29,10 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('token', res.body);
 
         this.getCurrent()
+        this.service.isLogin = true;
       },
       err => {
+        this.service.isLogin = false;
         if (err.status == 400)
           this.toastr.error('Неверный логин или пароль.', 'Ошибка входа.');
         else
@@ -48,8 +50,9 @@ export class LoginComponent implements OnInit {
           title: res.title,
           email: res.email
         }
+        this.service.userDetails = this.user;
         localStorage.setItem('user', JSON.stringify(this.user));
-        this.router.navigateByUrl('/home')
+        this.router.navigateByUrl('')
       })
   }
 }

@@ -7,7 +7,9 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class UserService {
-  environmentUrl = '';
+  environmentUrl = ''
+  isLogin: boolean
+  userDetails: object
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.environmentUrl = environment.apiUrl;
