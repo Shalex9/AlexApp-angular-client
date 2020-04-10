@@ -1,3 +1,29 @@
-<p>
-  film-card-x works!
-</p>
+<mat-card class="film-card">
+  <mat-card-content fxLayout="row" fxLayoutWrap fxLayoutAlign="space-between center">
+    <div fxFlex="35">
+      <a href="#" title="{{filmItem.title ? filmItem.title : 'Нет данных'}}">
+        <img md-card-image
+          src="{{filmItem.poster_path ? 'https://image.tmdb.org/t/p/w500'+filmItem.poster_path : '../../../assets/img/not-poster_path_320x480.jpg'}}"
+          alt="{{filmItem.title ? filmItem.title : 'Нет данных'}}">
+      </a>
+    </div>
+    <div class="content" fxFlex="60%" fxLayout="row" fxLayoutWrap fxLayoutAlign="space-between center">
+      <h2 fxFlex="100">{{filmItem.title ? filmItem.title : "Нет данных"}}</h2>
+      <p fxFlex="100">{{filmItem.tagline ? filmItem.tagline : ""}}</p><br>
+      <div fxFlex="60" fxLayout="row" fxLayoutWrap fxLayoutAlign="space-between center" class="one-row">
+        <span fxFlex="65">Продолжительность: </span><span
+          fxFlex="35">{{filmItem.runtime ? filmItem.runtime : "?"}}мин</span>
+      </div>
+      <div fxFlex="40" fxLayout="row" fxLayoutWrap fxLayoutAlign="space-between center" class="one-row">
+        <span fxFlex="35">Релиз:</span><span
+          fxFlex="65">{{filmItem.release_date ? filmItem.release_date : "Нет данных"}}</span>
+      </div>
+      <div fxFlex="100" fxLayout="row">
+        <p class="overview" fxFlex="100">{{filmItem.overview ? filmItem.overview : "Описание отсутсвует"}}</p>
+      </div>
+      <mat-card-actions fxFlex="100">
+        <button md-button>Подробнее</button>
+      </mat-card-actions>
+    </div>
+  </mat-card-content>
+</mat-card>

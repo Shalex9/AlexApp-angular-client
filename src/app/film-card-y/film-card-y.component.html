@@ -1,3 +1,17 @@
-<p>
-  film-card-y works!
-</p>
+<mat-card class="film-card">
+  <a routerLink="/film-detail" (click)="clickFilm()" title="{{filmItem.title ? filmItem.title : 'Нет данных'}}">
+    <img md-card-image
+      src="{{filmItem.poster_path ? 'https://image.tmdb.org/t/p/w500'+filmItem.poster_path : '../../../assets/img/not-poster_path_320x480.jpg'}}"
+      alt="{{filmItem.title ? filmItem.title : 'Нет данных'}}">
+  </a>
+  <mat-card-content>
+    <mat-card-title>{{filmItem.title ? filmItem.title : "Нет данных"}}</mat-card-title>
+    <p>{{filmItem.tagline ? filmItem.tagline : ""}}</p>
+    <p><span class="film-property">Релиз:</span> {{filmItem.release_date ? filmItem.release_date : "Нет данных"}}</p>
+    <p><span class="film-property">Продолжительность:</span> {{filmItem.runtime ? filmItem.runtime : "?"}}мин</p>
+    <p class="overview">{{filmItem.overview ? filmItem.overview : "Описание отсутсвует"}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button routerLink="/film-detail" (click)="clickFilm()" md-button>Подробнее</button>
+  </mat-card-actions>
+</mat-card>

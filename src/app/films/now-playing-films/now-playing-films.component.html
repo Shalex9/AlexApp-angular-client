@@ -1,3 +1,53 @@
-<p>
-  now-playing-films works!
-</p>
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-plain">
+          <div class="card-header" data-background-color="red">
+            <!-- fxLayout="row" fxLayoutWrap fxLayoutAlign="space-between center"  -->
+            <div class="tools" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%"
+              fxLayoutAlign="center">
+              <!--<search [filmName]="filmName" (emitSearch)='getFilmsBySearch($event)' fxFlex="40%"></search><br>-->
+              <div fxFlex="35%" fxLayoutAlign="center">
+                <button md-button [disabled]="index==1" (click)="prev()">Назад</button>
+                <button md-button [disabled]="index==max" (click)="next()">Вперед</button>
+              </div>
+              <!-- <card-view (emitCardView)='setNewCardView($event)'></card-view><br> -->
+            </div>
+          </div>
+
+          <mat-grid-list cols="2" rowHeight="400px">
+            <mat-grid-tile *ngFor="let film of filmList">
+              <film-card-x [filmId]="film.id"></film-card-x>
+            </mat-grid-tile>
+          </mat-grid-list>
+
+          <!-- <div [ngSwitch]="selectedView">
+                    <mat-card *ngIf="isFilmListEmpty()">Извините, фильмы по этому запросу не найдены...</mat-card>
+                    <mat-grid-list *ngSwitchCase="'yCards'" cols="4" rowHeight="950px">
+                      <mat-grid-tile *ngFor="let film of filmList">
+                        <film-card-y [filmId]="film.id"></film-card-y>
+                      </mat-grid-tile>
+                    </mat-grid-list> -->
+          <!-- 
+                    <mat-grid-list *ngSwitchCase="'xCards'" cols="2" rowHeight="400px">
+                      <mat-grid-tile *ngFor="let film of filmList">
+                        <film-card-x [filmId]="film.id"></film-card-x>
+                      </mat-grid-tile>
+                    </mat-grid-list> -->
+
+          <!-- <mat-grid-list *ngSwitchCase="'sketchCards'" cols="2" rowHeight="490px">
+                      <mat-grid-tile *ngFor="let film of filmList">
+                        <film-card-sketch [filmId]="film.id"></film-card-sketch>
+                      </mat-grid-tile>
+                    </mat-grid-list>
+                  </div> -->
+
+          <!-- <button md-button *ngIf="filmList[0] && !loading" (click)="addNowPlayingFilms()">Еще фильмы</button>
+                  <img class='loading' *ngIf="loading" src='assets/img/loading.gif'> -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

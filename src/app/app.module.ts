@@ -5,6 +5,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+// import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +29,7 @@ import { PopularFilmsComponent } from './films/popular-films/popular-films.compo
 import { TopRatedFilmsComponent } from './films/top-rated-films/top-rated-films.component';
 import { NowPlayingFilmsComponent } from './films/now-playing-films/now-playing-films.component';
 import { UpcomingFilmsComponent } from './films/upcoming-films/upcoming-films.component';
+import { FilmCardSketchComponent } from './film-card-sketch/film-card-sketch.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +49,8 @@ import { UpcomingFilmsComponent } from './films/upcoming-films/upcoming-films.co
     PopularFilmsComponent,
     TopRatedFilmsComponent,
     NowPlayingFilmsComponent,
-    UpcomingFilmsComponent
+    UpcomingFilmsComponent,
+    FilmCardSketchComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +59,9 @@ import { UpcomingFilmsComponent } from './films/upcoming-films/upcoming-films.co
     HttpClientModule,
     BrowserAnimationsModule,
     MatMenuModule,
+    MatGridListModule,
+    MatCardModule,
+    // FlexLayoutModule,
     ToastrModule.forRoot({
       progressBar: true
     }),

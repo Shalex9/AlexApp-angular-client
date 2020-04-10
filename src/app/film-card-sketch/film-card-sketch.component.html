@@ -1,0 +1,15 @@
+<mat-card class="film-card" fxLayout="row" fxLayoutWrap fxLayoutAlign="space-between center">
+  <a href="#" title="{{filmItem.title ? filmItem.title : 'Нет данных'}}">
+    <img md-card-image
+      src="{{filmItem.backdrop_path ? 'https://image.tmdb.org/t/p/w500'+filmItem.backdrop_path : '../../../assets/img/not-backdrop_path_500x281.jpg'}}"
+      alt="{{filmItem.title ? filmItem.title : 'Нет данных'}}">
+  </a>
+  <mat-card-content fxFlex="100" fxLayoutAlign="space-between baseline">
+    <mat-card-title fxFlex="75">{{filmItem.title ? filmItem.title : "Нет данных"}}</mat-card-title>
+    <span fxFlex="7" fxLayoutAlign="space-between baseline">
+      <i class="material-icons" fxLayoutAlign="space-between baseline">star</i>{{filmItem.vote_average}}</span>
+    <mat-card-actions fxFlex="18">
+      <button md-button>Подробнее</button>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>

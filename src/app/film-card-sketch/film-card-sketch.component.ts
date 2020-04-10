@@ -2,11 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FilmService } from '../shared/film.service';
 
 @Component({
-  selector: 'film-card-x',
-  templateUrl: './film-card-x.component.html',
-  styleUrls: ['./film-card-x.component.css']
+  selector: 'film-card-sketch',
+  templateUrl: './film-card-sketch.component.html',
+  styleUrls: ['./film-card-sketch.component.css']
 })
-export class FilmCardXComponent implements OnInit {
+export class FilmCardSketchComponent implements OnInit {
   @Input()
   filmId: string;
   filmItem: {} = {};
@@ -15,7 +15,6 @@ export class FilmCardXComponent implements OnInit {
   ngOnInit() {
     if (!this.filmId) { return; }
     this.filmService.getFilmById(this.filmId).subscribe(data => {
-      // console.log("data", data)
       this.filmItem = data;
     })
   }
